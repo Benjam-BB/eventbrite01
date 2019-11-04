@@ -18,6 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'faker'
 gem 'table_print'
 gem 'database_cleaner'
+gem "letter_opener", :group => :development
+gem 'dotenv-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
