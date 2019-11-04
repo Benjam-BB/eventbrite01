@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello <%= User.find(@attendance.user_id).first_name %>, tu es bien, inscrit à ton évènement <%= Event.find(@attendance.event_id).title%></h1>
+    
+    <p>Voici le récapitulatif de l'évènement :   </p>
+    <ul> 
+    <li>Nom : <%= Event.find(@attendance.event_id).title%></li>
+    <li>Date: <%= Event.find(@attendance.event_id).start_date%></li>
+    <li>Durée: <%= Event.find(@attendance.event_id).duration%></li>
+    <li>Lieu: <%= Event.find(@attendance.event_id).location%></li>
+    <li>Description: <%= Event.find(@attendance.event_id).description%></li>
+    <li>prix <%= Event.find(@attendance.event_id).price%></li>
+    </ul>
+    <p> À très vite sur eventbrite01 pour de supers events!
+  </body>
+</html>
