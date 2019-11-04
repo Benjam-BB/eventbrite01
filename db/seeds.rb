@@ -24,7 +24,7 @@ puts "Users are created"
 end 
 puts "events are created"
 
-30.times do
+5.times do
     Attendance.create(stripe_customer_id: Faker::Movies::Hobbit.character, user_id: User.all.sample.id, event_id: Event.all.sample.id)
 end
 puts "all done"
