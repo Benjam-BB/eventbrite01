@@ -1,2 +1,23 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<div class="card bg-light border-dark">
+    <h1 class="card-header"><%= @user.first_name%> <%= @user.last_name%> </h1>
+    <div class="card-body">
+        <h5 class="card-title">Utilisateur n°<%=@user.id%></h5>
+        <p class="card-text"> Description : <%=@user.description%></p>
+        <p class="card-text">Email : <%=@users.find(params[:id]).email%></p>
+    </div>
+</div>
+<br/>
+ <h2>Ses Evenements : </h2>
+<div class="card-deck d-flex">
+    <% Event.where(admin_id: params[:id]).each do |event| %>
+    <div class="col-sm-4 mb-3">
+        <div class="card bg-light">
+            <h5 class="card-header"><%= event.title%></h5>
+            <div class="card-body">
+                <h5 class="card-title"><%= event.start_date %></h5>
+                <p class="card-text">Lieu : <%= event.location %></p>
+                <a class="card-text btn btn-outline-primary btn-sm" href=" <%= event_path(event.id) %>">Voir cet event</a>
+            </div>
+        </div>
+    </div>
+    <%end%>

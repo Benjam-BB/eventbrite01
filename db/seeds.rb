@@ -15,7 +15,7 @@ DatabaseCleaner.clean
 puts "DataBase Clean"
 
 10.times do #création des users
-    User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Name.middle_name+"@yopmail.fr", encrypted_password: Faker::Internet.password(min_length: 10, max_length: 20), description: Faker::Lorem.sentence(word_count: 5))
+    User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Name.middle_name+"@yopmail.fr", password: Faker::Internet.password(min_length: 10, max_length: 20), description: Faker::Lorem.sentence(word_count: 5))
 end
 puts "Users are created"
 

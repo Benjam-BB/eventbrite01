@@ -8,7 +8,7 @@ class Event < ApplicationRecord
     validates :price, presence: true,
         inclusion: { in: 1..1000 }
     validates :location, presence: true
-    validate :divisible_by_five, :is_in_future?
+    validate :is_multiple_5?, :is_future?
     has_many :attendances
     has_many :users, through: :attendances
     belongs_to :admin, class_name: "User"
