@@ -15,7 +15,7 @@ The app is also online on https://eventbrite01.herokuapp.com/
 SET-UP
 ```
 $ git clone https://github.com/Benjam-BB/eventbrite01
-
+```
 Go to the folder and run 
 ```
 $ bundle install
