@@ -20,6 +20,7 @@ gem 'table_print'
 gem 'database_cleaner'
 gem "letter_opener"
 gem 'dotenv-rails'
+gem 'devise'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
