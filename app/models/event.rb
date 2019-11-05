@@ -13,13 +13,12 @@ class Event < ApplicationRecord
     has_many :users, through: :attendances
     belongs_to :admin, class_name: "User"
 
-    def divisible_by_five
-        if (self.duration % 5) != 0
-          self.errors[:base] << "La durée doit être un multiple de 5"
-        end
-    end
-    
-    def is_in_future?
-        self.start_date  >=  Date.today
-    end
+   
+  def is_future?
+    errors.add(:start_date, "La date de départ ne peut être passée") unless self.start_date.to_i > Time.now.to_i
+  end
+
+  def is_multiple_5?
+    errors.add(:duration, "La durée (minutes) doit être multiple de 5") unless self.duration % 5 == 0
+  end
 end

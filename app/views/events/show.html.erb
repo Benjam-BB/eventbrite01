@@ -1,0 +1,10 @@
+<div class="card bg-light">
+    <h1 class="card-header"><%= @event.title%></h1>
+    <div class="card-body">
+        <h5 class="card-title"> Organisé par : <%= User.find(@event.admin_id).first_name %><%= User.find(@event.admin_id).last_name %></h5>
+        <p class="card-text"> Date : <%= @event.start_date %></p>
+        <p class="card-text">Durée : <%= @event.duration %> minutes</p>
+        <p class="card-text">Lieu : <%= @event.location %></p>
+        <p class="card-text"> Description : <%= @event.description %></p>
+    </div>
+ </div>

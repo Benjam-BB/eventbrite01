@@ -1,2 +1,20 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<html>
+<body>
+    <h3>Voici nos prochains évènements</h3>
+    <br/>
+    <div class="card-deck">
+        <% @events.each do |event| %> <!-- -->
+        <div class="col-sm-4 mb-3">
+            <div class="card bg-light">
+                <h5 class="card-header"> <%= event.title %> </h5>
+                <div class="card-body">
+                    <h5 class="card-title"><%= event.start_date %></h5>
+                    <p class="card-text">Organiser par : <%= User.find(event.admin_id).first_name %> <%= User.all.find(event.admin_id).last_name %></p>
+                    <a class="card-text btn btn-outline-primary btn-sm" href="<%= event_path(event.id) %>">Voir cet évènement</a>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</body>
+</html>

@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ .main{ 
+    margin: 0% 3% 0% 3%;
+    padding: 2%;
+     }
+
+ .jumbotron {
+        line-height:0px;
+        font-weight:bold;
+        background:linear-gradient(110deg,rgb(230, 100, 100),rgba(145,152,229,0.5)), url("https://images.pexels.com/photos/1735909/pexels-photo-1735909.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        opacity: 0.9;
+        min-height: 350px;
+    }
